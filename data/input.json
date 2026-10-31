@@ -1,0 +1,58 @@
+{
+  "processor": {
+    "baseOperationCost": 1,
+    "cacheMissPenalty": 20,
+    "branchMispredictionPenalty": 10,
+    "deadlineCycles": 100
+  },
+  "operations": [
+    {
+      "name": "ExtractDestinationIP",
+      "type": "Read",
+      "memoryAccesses": 1,
+      "branches": 0
+    },
+    {
+      "name": "LoadRouteMask",
+      "type": "Read",
+      "memoryAccesses": 1,
+      "branches": 0
+    },
+    {
+      "name": "ApplyBitwiseAND",
+      "type": "Compute",
+      "memoryAccesses": 0,
+      "branches": 0
+    },
+    {
+      "name": "CheckPrefixMatch",
+      "type": "Branch",
+      "memoryAccesses": 0,
+      "branches": 1
+    },
+    {
+      "name": "LoadNextHopAddress",
+      "type": "Read",
+      "memoryAccesses": 1,
+      "branches": 0
+    },
+    {
+      "name": "CheckInterfaceState",
+      "type": "Branch",
+      "memoryAccesses": 0,
+      "branches": 1
+    },
+    {
+      "name": "UpdatePacketHeader",
+      "type": "Write",
+      "memoryAccesses": 1,
+      "branches": 0
+    },
+    {
+      "name": "ForwardPacket",
+      "type": "Compute",
+      "memoryAccesses": 0,
+      "branches": 0
+    }
+  ]
+}
